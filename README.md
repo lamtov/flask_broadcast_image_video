@@ -14,4 +14,6 @@ python main.py
 # for cloud vm only: sudo apt install libgl1-mesa-glx
 ```
 ## Preview Demo:
+```bash
 http://34.126.113.23:4009/
+```

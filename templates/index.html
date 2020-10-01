@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Mod1</title>
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 35%
+        }
+
+    </style>
+</head>
+<body>
+<script src="/static/jquery.min.js"></script>
+<script type=text/javascript>
+    $(function () {
+        $("#play_pause").click(function () {
+            $.ajax({
+                url: "/play_pause",
+                type: "POST"
+            });
+        });
+           $("#on_of_face").click(function () {
+            $.ajax({
+                url: "/on_of_face",
+                type: "POST"
+            });
+        });
+        $("#speed_up").click(function () {
+            $.ajax({
+                url: "/speed_up",
+                type: "POST"
+            });
+        });
+        $("#speed_down").click(function () {
+            $.ajax({
+                url: "/speed_down",
+                type: "POST"
+            });
+        });
+        $("#reload").click(function () {
+            $.ajax({
+                url: "/reload",
+                type: "POST"
+            });
+        });
+    })
+</script>
+<h1 align="center">Simple Flask broadcast Image, Video</h1>
+
+<div class="center">
+    <input style="color: coral" type="button" id="play_pause" value="Play_Pause ">
+    <input style="color: aqua" class="favorite styled" type="button" id="speed_up" value="Speed_Up ">
+    <input style="color: rosybrown" class="favorite styled" type="button" id="speed_down" value="Speed_Down ">
+    <input style="color: chocolate" type="button" id="on_of_face" value="On_OFF_FACE ">
+    <input style="color: darkslategrey" class="favorite styled" type="button" id="reload" value="Reload ">
+</div>
+<img id="bg" class="center" src="{{ url_for('video_feed',video_id=1) }}">
+<img id="bg" class="center" src="{{ url_for('video_feed',video_id=2) }}">
+</body>
+</html>
